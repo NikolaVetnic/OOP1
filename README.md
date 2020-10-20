@@ -1,2 +1,2 @@
-# SPA2_V
-Rešeni zadaci sa vežbi iz Struktura podataka i algoritama 2 na PMFu, Novi Sad.
+# OOP1
+Rešeni zadaci sa vežbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi Sad.
