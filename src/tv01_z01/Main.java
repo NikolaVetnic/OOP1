@@ -26,7 +26,7 @@ public class Main {
 		else
 			System.out.println("Obim drugog trougla je veci.");
 
-		Triangle t1 = new Triangle(verts1);
+		Triangle t1 = new Triangle(new Point(0, 0), new Point( 3, 0), new Point(0,  4));
 		Triangle t2 = new Triangle(new Point(0, 0), new Point(-1, 0), new Point(0, -1));
 		
 		if (t1.circumference() > t2.circumference())
