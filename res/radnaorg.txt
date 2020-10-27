@@ -1,0 +1,9 @@
+8
+Milovan, 10
+Ana,12, 3
+Dijana, 10, 5
+Pera, 8
+Tijana, 4, 8
+Petra, 9
+Aca, 8, 2
+Mika, 9

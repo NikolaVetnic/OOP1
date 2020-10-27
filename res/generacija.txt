@@ -1,0 +1,16 @@
+15
+Pera, 8.6, DMI
+Petra, 9.8, DF
+Mika, 9.0, DF
+Mara, 9.2, DMI
+Zika, 9.55, DMI
+Milica, 10.0, DMI
+Stojan, 10.0, DF
+Darko, 9.6, DMI
+Slavica, 8.2, DMI
+Marko, 8.0, DMI
+Marica, 9.4, DMI
+Zarko, 9.7, DH
+Goran, 6.7, DMI
+Zorana, 9.0, DF
+Zoran,7.7, DH
