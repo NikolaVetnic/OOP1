@@ -13,7 +13,7 @@ public class PlasticnaPolica extends Polica {
 	@Override
 	public boolean dodajTeglu(double zapremina, double tezina, String sadrzaj) {
 		
-		if (brTegli() == MAX_TEGLI || trenutnaTezina() + tezina > 2.5) {
+		if (brTegli() == MAX_TEGLI || trenutnaTezina() > 2.5) {
 //			System.out.println("Dodavanje tegle na PLASTICNU policu je NEUSPESNO.");
 			return false;
 		}
