@@ -54,7 +54,9 @@ public class Polica {
 	}
 	
 	public String toString() {
-		return String.format("%-15s [ %.1f / %.1f kg, ukupna zapremina %.1f l )\n", proizvodjac, trenutnaTezina, maxTezina, ukupnaZapremina());
+		return String.format(
+				"%-15s [ %.1f / %.1f kg, ukupna zapremina %.1f l )\n", 
+				proizvodjac, trenutnaTezina, maxTezina, ukupnaZapremina());
 	}
 	
 	public String proizvodjac() 	{ return proizvodjac; 		}
