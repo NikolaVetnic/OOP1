@@ -13,10 +13,12 @@ public class Spajz {
 	 * lice bude i maksimalna težina, međutim tog podatka nema u fajlu.
 	 * Iz tog razloga se u konstruktoru špajza maksimalna težina za ne-
 	 * plastične police postavlja na 10.0.
+	 * @throws IOException 
+	 * @throws NumberFormatException 
 	 */
 	
-	private Spajz(String fileP, String fileT) throws NumberFormatException, IOException {
-		
+	private void postaviPolice(String fileP) throws NumberFormatException, IOException {
+
 		BufferedReader brP = new BufferedReader(
 				new FileReader(fileP));
 		
@@ -33,6 +35,9 @@ public class Spajz {
 		}
 		
 		brP.close();
+	}
+	
+	private void postaviTegle1(String fileT) throws NumberFormatException, IOException {
 		
 		/**
 		 * NAPOMENA: ovo je moja ideja "cikličnog" dodavanja tegli - učit-
@@ -72,8 +77,53 @@ public class Spajz {
 		}
 	}
 	
-	public static Spajz ucitaj(String inputP, String inputT) throws NumberFormatException, IOException {
-		return new Spajz("res//" + inputP + ".txt", "res//" + inputT + ".txt");
+	private void postaviTegle2(String fileT) throws NumberFormatException, IOException {
+		
+		/**
+		 * NAPOMENA: ovo je ideja koju ste vi izneli u mailu jednom kolegi
+		 * dok smo još radili zadatak - na prvu policu se stavlja prva te-
+		 * gla, na drugu druga, na treću treća... Kada se dođe do kraja n-
+		 * iza tegli, ponovo se prelazi na početak. 
+		 */
+
+		BufferedReader brT = new BufferedReader(
+				new FileReader(fileT));
+		
+		int count = Integer.parseInt(brT.readLine().trim());
+		Tegla[] temp = new Tegla[count];
+		
+		for (int i = 0; i < count; i++) {
+
+			String[] tokens = brT.readLine().split(",");
+			
+			temp[i] = Tegla.nova(
+					Double.parseDouble(tokens[0].trim()), 
+					Double.parseDouble(tokens[1].trim()),
+									   tokens[2].trim());
+		}
+		
+		brT.close();
+		
+		int pos = 0;
+		
+		for (int j = 0; j < Polica.maxTegli(); j++) {
+			for (int i = 0; i < police.length; i++) {
+				police[i].dodajTeglu(temp[pos]);
+				pos = (pos + 1) % temp.length;
+			}
+		}
+	}
+	
+	private Spajz(String fileP, String fileT, int nacinSlaganja) throws NumberFormatException, IOException {
+		
+		postaviPolice(fileP);
+		
+		if (nacinSlaganja == 1) postaviTegle1(fileT);
+		else 					postaviTegle2(fileT);
+	}
+	
+	public static Spajz ucitaj(String inputP, String inputT, int nacinSlaganja) throws NumberFormatException, IOException {
+		return new Spajz("res//" + inputP + ".txt", "res//" + inputT + ".txt", nacinSlaganja);
 	}
 	
 	public double ukupnaTezina() {
@@ -118,5 +168,5 @@ public class Spajz {
 			
 			System.out.println();
 		}
-	}
+	}	
 }

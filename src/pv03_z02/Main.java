@@ -8,7 +8,11 @@ public class Main {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		
-		Spajz sp = Spajz.ucitaj("police", "tegle");
+		/**
+		 * NAPOMENA: treći parametar određuje način slaganja tegli, vidite
+		 * klasu Spajz.java za detalje.
+		 */
+		Spajz sp = Spajz.ucitaj("police", "tegle", 2);
 		sp.print();
 		
 		sp.ukupnaTezina();
