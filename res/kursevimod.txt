@@ -1,0 +1,15 @@
+14
+engleski, osnovni, 7
+nemacki, osnovni, 7
+francuski, osnovni, 5
+ruski, osnovni, 5
+kineski, osnovni, 3
+spanski, osnovni, 4
+engleski, srednji, 8
+nemacki, srednji, 6
+francuski, srednji, 4
+ruski, srednji, 2
+spanski, srednji, 4
+engleski, napredni, 6
+nemacki, napredni, 6
+francuski, napredni, 5
