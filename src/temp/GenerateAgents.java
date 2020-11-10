@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class GenerateAgents {
 
 	public static void main(String[] args) throws IOException {
 		
-		int numAgents = 1000;
+		int numAgents = 100;
 		
 		generateAgents(numAgents);
 		generateContacts(numAgents);
@@ -69,6 +70,9 @@ public class GenerateAgents {
 				arrCont.add((int) (Math.random() * numAgents));
 			
 			arrCont = removeDuplicates(arrCont);
+			
+			Comparator<Integer> c = (i1, i2) -> i1 - i2;
+			arrCont.sort(c);
 			
 			for (int j = 0; j < arrCont.size(); j++)
 				bw.write(i + ", " + arrCont.get(j) + "\n");
