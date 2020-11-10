@@ -23,17 +23,16 @@ public class GenerateAgents {
 	
 	public static <T> ArrayList<T> removeDuplicates(ArrayList<T> list) { 
   
-        // Create a new LinkedHashSet 
+        // create a new LinkedHashSet 
         Set<T> set = new LinkedHashSet<>(); 
   
-        // Add the elements to set 
+        // add the elements to set 
         set.addAll(list); 
   
-        // Clear the list 
+        // clear the list 
         list.clear(); 
   
-        // add the elements of set 
-        // with no duplicates to the list 
+        // add the elements of set with no duplicates to the list 
         list.addAll(set); 
   
         // return the list 
