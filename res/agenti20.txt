@@ -1,0 +1,21 @@
+20
+obazriv, 0
+opusten, 1
+obazriv, 2
+opusten, 3
+obazriv, 4
+opusten, 5
+obazriv, 6
+opusten, 7
+obazriv, 8
+opusten, 9
+obazriv, 10
+opusten, 11
+obazriv, 12
+opusten, 13
+obazriv, 14
+opusten, 15
+obazriv, 16
+opusten, 17
+obazriv, 18
+opusten, 19

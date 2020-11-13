@@ -1,0 +1,10 @@
+9
+auto, 2, 5
+kombi, 13, 5
+kombi, 5, 10
+auto, 10, 6
+kombi, 13, 5
+kombi, 5, 10
+auto, 4, 4
+kombi, 13, 5
+kombi, 10, 3

@@ -1,0 +1,11 @@
+10
+obazriv, 0
+opusten, 1
+obazriv, 2
+opusten, 3
+obazriv, 4
+opusten, 5
+obazriv, 6
+opusten, 7
+obazriv, 8
+opusten, 9
