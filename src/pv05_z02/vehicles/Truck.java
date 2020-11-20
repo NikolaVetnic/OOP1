@@ -73,31 +73,40 @@ public class Truck {
 		Wheel[] loadedWheels = loadWheels(input);
 		Arrays.sort(loadedWheels);
 		
-		wheels = new Wheel[MAX_WHEELS];
-		reserve = new Wheel[loadedWheels.length - MAX_WHEELS];
+		wheels = new Wheel[loadedWheels.length > MAX_WHEELS ? MAX_WHEELS : loadedWheels.length];
 		
 		for (int i = 0; i < wheels.length; i++)
 			wheels[i] = loadedWheels[i];
 		
-		for (int i = 0; i < reserve.length; i++)
-			reserve[i] = loadedWheels[i + MAX_WHEELS];
+		if (loadedWheels.length > MAX_WHEELS) {
+			
+			reserve = new Wheel[loadedWheels.length - MAX_WHEELS];
+			
+			for (int i = 0; i < reserve.length; i++)
+				reserve[i] = loadedWheels[i + MAX_WHEELS];
+		} else {
+			
+			reserve = null;
+		}
 	}
 	
 	public boolean drive(int currentDist) {
 		
 		if (Util.getPercent(1, 1000) <= 5) {
 			
-			int idx = Util.getPercent(1, 10) - 1;
+			int idx = Util.getPercent(1, wheels.length) - 1;
 			
 			wheels[idx].setRuptured(true);
 			
 			int rep = -1;
 			
-			for (int i = 0; i < reserve.length; i++)
-				if (reserve[i].isUsable()) {
-					rep = i;
-					break;
-				}
+			if (reserve != null) {
+				for (int i = 0; i < reserve.length; i++)
+					if (reserve[i].isUsable()) {
+						rep = i;
+						break;
+					}
+			}
 			
 			if (rep != -1) {
 				
@@ -129,11 +138,21 @@ public class Truck {
 	}
 	
 	
-	public void printWheels() 	{ for (Wheel w : wheels) System.out.println(w); 	}
-	public void printReserve() 	{ for (Wheel w : reserve) System.out.println(w); 	}
+	public void printWheels() {
+		for (Wheel w : wheels)
+			System.out.println(w); 	
+	}
+	
+	public void printReserve() {
+		
+		if (reserve == null) return;
+		
+		for (Wheel w : reserve) 
+			System.out.println(w); 	
+	}
 	
 
 	public String name() 		{ return name; 	 	}
 	public Wheel[] wheels() 	{ return wheels; 	}
-	public Wheel[] reserve() 	{ return reserve; 	}
+	public Wheel[] reserve() 	{ return reserve != null ? reserve : null; 			}
 }
