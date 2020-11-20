@@ -13,7 +13,7 @@ public class Main {
 		 * eđivao informaciju.
 		 */
 		
-		int numAgents = 10;	// ukupan broj agenata
+		int numAgents = 10;		// ukupan broj agenata
 		int probability = 50;	// verovatnoca da agent bude obazriv
 		
 		GenerateAgents.generateAgents(numAgents, probability);

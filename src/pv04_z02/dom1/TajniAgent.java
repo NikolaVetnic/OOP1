@@ -6,7 +6,6 @@ public abstract class TajniAgent {
 
 	private String kodnoIme;
 	private boolean primioInformaciju;
-	protected boolean prosledioInformaciju = false;
 	
 	protected LinkedList<TajniAgent> kontakti = new LinkedList<TajniAgent>();
 	protected LinkedList<TajniAgent> prosledjivani = new LinkedList<TajniAgent>();
