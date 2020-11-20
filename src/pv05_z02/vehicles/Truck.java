@@ -139,6 +139,9 @@ public class Truck {
 	
 	
 	public void printWheels() {
+		
+		if (wheels == null) return;
+		
 		for (Wheel w : wheels)
 			System.out.println(w); 	
 	}
