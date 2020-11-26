@@ -4,12 +4,12 @@ Rešeni zadaci sa vežbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi
 ## Predavanja
 
 ## Teorijske vežbe
-tv01_z01 - tačka i trougao
-tv01_z02 - unos sa tastature bez Svetovida
-tv01_z03 - radna organizacija i radnik
-tv01_z04 - radna organizacija, drugi način
-tv02_z05 - generacija i student
-tv02_z06 - radna organizacija i rukovodilac
+- tv01_z01 - tačka i trougao
+- tv01_z02 - unos sa tastature bez Svetovida
+- tv01_z03 - radna organizacija i radnik
+- tv01_z04 - radna organizacija, drugi način
+- tv02_z05 - generacija i student
+- tv02_z06 - radna organizacija i rukovodilac
 
 ## Praktične vežbe
 - pv01_z01 - demonstracioni zadatak: kazino
