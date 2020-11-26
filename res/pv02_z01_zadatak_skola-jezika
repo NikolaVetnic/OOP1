@@ -1,0 +1,20 @@
+Vežbe 2 - Škola jezika
+
+Klasom Kurs predstavljen je jedan kurs u skoli jezika. Ova klasa kao atribute ima 
+- jezik (String), 
+- nivo (String) - moze imati vrednosti osnovni, srednji i napredni (set metoda ne dozvoljava neku drugu vrednost, setuju se samo ispravne vrednosti, ili osnovni ako vrednost nije ispravna), 
+- broj polaznika (int) - set metoda ne dozvoljava negativne vrednosti, ako je vrednost negativna, broj polaznika je 0. 
+
+Klasa jos sadrzi i 
+- konstruktor koji inicijalizuje sve atribute, 
+- get i set metode za svaki atribut,
+- toString() metod.
+
+Klasom SkolaJezika predstavljena je skola jezika u kojoj se odrzavaju kursevi. Podaci o kursevima se ucitavaju iz tekstualnog fajla koji je organizovan na sledeci nacin: 
+- u prvoj liniji fajla nalazi se broj kurseva u ponudi skole, a u svakoj sledecoj podaci o jednom kursu razdvojeni zarezom (jezik, nivo, broj polaznika). 
+
+Klasa definise i sledece metode:
+- String najnaprednijiJezik() - vraca jezik na cijem naprednom kursu ima najvise polaznika. Ako ima vise takvih jezika, metod vraca prvi na koji je naisao.
+- void unaprediGrupu(String jezik, String nivo) - za zadati jezik i nivo povecava nivo kursa za jedan stepen (osnovni u srednji, srednji u napredni). Ukoliko je zadati nivo napredni, ili ne postoji kurs sa unetim parametrima, metoda ne radi nista. Ukoliko nakon povecanja postoje dva kursa za isti jezik i nivo, potrebno je ispisati poruku da je potrebno spojiti te dve grupe.
+
+U glavnom programu potrebno je napraviti instancu klase SkolaJezika za tekstualni fajl kursevi.txt i ispisati rezultate izvrsavanja metoda najnaprednijiJezik() i unaprediGrupu().

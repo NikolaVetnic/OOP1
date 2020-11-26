@@ -1,0 +1,30 @@
+Vežbe 1 - Kazino
+Klase: polja, konstruktori, get i set metodi, toString metod
+
+Klasom Kladionicar predstavljen je jedan igrac u kazinu. Ova klasa kao atribute ima 
+- ime igraca (String), 
+- ime igre koju trenutno igra (String) - moze imati vrednosti poker, ajnc i rulet (set metoda ne dozvoljava neku drugu vrednost, setuju se samo ispravne vrednosti, ili poker ako vrednost nije ispravna), 
+- stanje na racunu (int). 
+
+Klasa jos sadrzi i 
+- konstruktor koji inicijalizuje sve atribute, 
+- get i set metode za svaki atribut 
+- toString() metod.
+
+Klasom Kazino predstavljen je kazino u kom se igraci klade i sadrzi 
+- polje sa nizom kladionicara,
+- toString() metod koji poziva toString() metod svih kladionicara u nizu,
+- metod sa zaglavljem String najprofitnijaIgra() - vraca naziv igre koju igra najveci broj kladionicara sa racunom u minusu. Ako ima vise takvih igara, metod vraca prvu na koju je naisao.
+ 
+U glavnom programu potrebno je napraviti instancu klase Kazino, inicijalizovati je sa nizom kladionicara i ispisati rezultate izvrsavanja metoda toString() i najprofitnijaIgra(). Rezultat izvrsavanja treba da bude sledeci:
+
+Pera igra poker i ima 15000 na racunu.
+Mika igra ajnc i ima 17000 na racunu.
+Zika igra rulet i ima -1500 na racunu.
+Bora igra ajnc i ima -11000 na racunu.
+Dora igra rulet i ima 5000 na racunu.
+Zora igra ajnc i ima -3000 na racunu.
+Lara igra poker i ima 22000 na racunu.
+Mara igra poker i ima 7000 na racunu.
+
+Najprofitnija igra trenutno je ajnc.

@@ -1,0 +1,18 @@
+Prvi domaći
+
+Klasom Kosarkas predstavljen je jedan kosarkas na terenu. Ova klasa ima atribute:
+- Ime I prezime igraca (jedan String)
+- Pozicija na kojoj igra (moze biti bek, krilo ili centar), setuju se samo ispravne vrednosti, ili bek ako vrednost nije ispravna
+- Prosecan indeks korisnosti (double)
+
+Klasa jos sadrzi:
+- Konstruktor koji inicijalizuje sve atribute - get I set metode za svaki atribut
+- toString() metod
+
+Klasom Tim predstavljen je tim u kojem se nalaze igraci I sadrzi:
+- polje sa nizom kosarkasa
+- toString() metod koji poziva toString() metod svih igraca u nizu,
+- metod sa zaglavljem najkorisnijiIgracNaTerenu() - vraca ime I prezime najkorisnijeg igraca na terenu. Ako ih ima vise, vraca poslednjeg na kojeg je naisao.
+
+U glavnom programu je potrebno napraviti instancu klase Tim, inicijalizovati je nizom kosarkasa I ispisati rezultate izvrsavanja metoda toString() I najkorisnijiIgracNaTerenu().
+Sami napravite tim od pet igraca (2 beka, 2 krila I 1 centar).

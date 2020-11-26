@@ -1,0 +1,23 @@
+Treći domaći
+
+Klasom Tegla opisuje se jedna tegla u spajzu. Svaka tegla ima svoju zapreminu (double), tezinu (double) I sta se u njoj nalazi (String). Klasa sadrzi I konstruktor koji inicijalizuje sva polja, get metode I toString() metod (koji, izmedju ostalog, zaokruzuje zapreminu I tezinu na jednu decimalu).
+
+Klasa Polica opisuje policu preko sledecih argumenata: ime proizvodjaca (String), broj redova (int) I maksimalno tezinsko opterecenje (double), trenutno opterecenje (double) I niz tegli na polici (nikad vise od 10). I ova klasa sadrzi konstruktor koji inicijalizuje sva polja, get metode za sve atribute I set metod za trenutno optercenje. Pored toga, klasa sadrzi I sledece medote:
+- public boolean dodajTeglu(Tegla t) – dodaje teglu na policu ako ima “mesta” tj. nije dostignuto maksimalno opterecenje police I vraca logicku vrednost da li je ili nije dodao na policu. Takodje, povecati.
+- public double ukupnaZapremina() - vraca ukupnu zapreminu svih tegli na polici.
+
+Klasa PlasticnaPolica nasledjuje klasu Polica. Plasticna polica ima maksimalno opterecenje od 4.0 I ova klasa redefinise metod dodajTeglu(Tegla t) tako sto ne ubaci teglu ako je opterecenje vec dostiglo 2.5, radi sigurnosti ;).
+
+Klasa Spajz sadrzi niz polica. Police se ocitavaju iz fajla “police.txt”. U prvoj liniji fajla se nalazi broj polica, a u svakoj narednoj liniji podaci o jednoj polici:
+- ime proizvodjaca, I broj redova.
+
+Polica je plasticna ako je ime proizvodjaca duze od 5 karaktera.
+
+Niz tegli se popunjava iz fajla “tegle.txt”. U prvoj liniji fajla se nalazi broj tegli a u svakoj sledecoj liniji informacije o tegli:
+- zapremina, tezina, sadrzaj.
+
+Tegle se dodaju ciklicno.
+
+Klasa sadrzi I sledece metode:
+- metod koji vraca ukupnu tezinu spajza (zelimo da znamo koliko imamo zaliha za zimu) :) 
+- metod koji vraca plasticnu policu sa najvecim opterecenjem manjim od 2.5.

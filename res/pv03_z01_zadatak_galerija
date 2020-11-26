@@ -1,0 +1,25 @@
+Vežbe 3 - Galerija
+
+﻿Klasom UmetnickoDelo se opisuje jedno umetnicko delo u prodajnoj galeriji. Svako delo odredjuju njegov naziv (String), godina nastanka (int) i cena (double, u evrima). Klasa sadrzi i konstruktor koji inicijalizuje sva polja, get metode i toString() metod (koji, izmedju ostalog, zaokruzuje cenu na dve decimale).  
+
+Klasa Umetnik opisuje jednog umetnika njegovim imenom (String), nizom njegovih dela i njihovim ukupnim brojem (int). Sva polja klase su privatna pa i za njih treba realizovati get metode. Osim toga treba kreirati konstruktor koji kao argumente prima ime umetnika kao i maksimalan broj dela koje on moze da izlozi u galeriji, i sledece metode: 
+- public boolean izlozi (UmetnickoDelo d) - dodaje delo u niz (ako ima mesta) i povecava se ukupan broj njegovih dela za 1. Logicka vrednost koju metod vraca je signal da je dodavanje uspelo ili nije.
+- public double vrednost() - vraca vrednost izlozenih dela umetnika tako sto sabira vrednosti svih dela. 
+
+Klasa Slikar nasledjuje klasu Umetnik. Slikar moze izloziti najvise 5 svojih dela u galeriji. Slikar redefinise metod vrednost() jer vrednost svakog slikarovog dela raste za 15% svake godine pa tako starije slike vrede vise.  
+
+Klasa Galerija sadrzi niz umetnika. Informacije o umetnicima koji izlazu u datoj galeriji ucitavaju se iz tekstualnog fajla "Umetnici.txt". U prvoj liniji fajla je informacija o broju umetnika, a u svakoj narednoj liniji su podaci o jednom umetniku:
+- ukoliko je u pitanju slikar, samo ime,
+- ukoliko je neka druga vrsta umetnika, ime i maksimalni broj dela odvojeni zarezima.  
+
+Niz dela puni se podacima iz tekstualnog fajla "Dela.txt". U prvoj liniji fajla je informacija o broju dela, a u svake 4 naredne linije su podaci o jednom delu:
+- ime umetnika cije je delo, 
+- naziv dela, 
+- godina nastanka, 
+- cena u evrima. 
+
+Klasa takodje sadrzi sledece metode: 
+- metod koji vraca slikara sa najstarijim delom,
+- metod koji izracunava i ispisuje prosecnu vrednost dela svih umetnika; 
+
+U glavnom programu je potrebno napraviti instancu klase Galerija i ispisati rezultate izvršavanja svih metoda te klase.
