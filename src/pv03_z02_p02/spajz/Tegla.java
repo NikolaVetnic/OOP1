@@ -1,4 +1,4 @@
-package pv03_z02_p02;
+package pv03_z02_p02.spajz;
 
 public class Tegla {
 	

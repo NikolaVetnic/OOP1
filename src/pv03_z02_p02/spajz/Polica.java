@@ -1,4 +1,4 @@
-package pv03_z02_p02;
+package pv03_z02_p02.spajz;
 
 import java.util.ArrayList;
 import java.util.List;
