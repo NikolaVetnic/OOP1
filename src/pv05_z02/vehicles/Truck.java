@@ -110,14 +110,17 @@ public class Truck {
 			
 			if (rep != -1) {
 				
-				System.out.printf("After %dkm replaced wheel #%d with one of the spares.\n", currentDist, idx);
+				System.out.printf(
+						"After %dkm replaced wheel #%d with one of the spares.\n", currentDist, idx);
 				
 				Wheel tmp = wheels[idx];
 				wheels[idx] = reserve[rep];
 				reserve[rep] = tmp;
 			} else {
 				
-				System.out.printf("After %dkm wheel #%d ruptured, but there are no spare wheels left.\n", currentDist, idx);
+				System.out.printf(
+						"After %dkm wheel #%d ruptured, but there are no spare wheels left. " +
+						"%d operational wheels left.\n", currentDist, idx, numUsableWheels);
 				numUsableWheels--;
 			}
 		}
