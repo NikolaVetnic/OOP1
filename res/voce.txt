@@ -1,0 +1,10 @@
+9
+Jabuka, 0.15, ne
+Banana, 0.2
+Jabuka, 0.2, da
+Breskva, 0.2
+Ananas, 0.7
+Kajsija, 0.15,
+Jagoda, 0.05
+Dinja, 0.9
+Nar, 0.35

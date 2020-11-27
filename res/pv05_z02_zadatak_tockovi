@@ -1,0 +1,13 @@
+Peti domaći - Kamion
+
+Apstraktna klasa Tocak (3p) predstavlja tocak kamiona. Sadrzi polje koje oznacava da li je na tocku pukla guma, kao i starost gume. Postoji 1% sanse da je guma pukla odmah po inicijalizaciji. Tocak definise apstraktni metod koji signalizira da li je upotrebljiv ili nije. Klasa sadrzi i konstruktor koji prima starost gume, get metode, set metod za logicko polje i toString() metod.
+
+Klase TocakSaLetnjomGumom (2p), TocakSaZimskomGumom (1p) i TocakSaUniverzalnomGumom (2p) nasledjuju klasu Tocak. Prilikom inicijalizacije tocka sa letnjom gumom postoji 5% sanse da je guma pukla, dok kod inicijalizacije tocka sa univerzalnom gumom postoji 3% sanse da je guma pukla. Metod koji signalizira upotrebljivost tocka implementiran je na sledeci nacin: sve tri vrste tockova uzimaju u obzir da li je guma pukla (u tom slucaju tocak nije upotrebljiv) i jos dodatno da li je starost ispod 10 (letnje gume), 7 (univerzalne gume) I 5 (zimske gume) godina.
+
+Klasa Kamion (5p) sadrzi niz tockova koje ucitava iz fajla i sadrzi metode:
+- private void postaviNajboljeTockove() – sortira niz tockova tako da su na pocetku niza upotrebljivi tockovi
+- public boolean vozi() – simulira voznju od jednog kilometra prilikom kog postoji 0.5% sanse da pukne neka slucajno odabrana guma. Vraca signal da li voznja moze da se nastavi. Voznja moze da se nastavi ako je vise od pola tockova na kamionu (koji se koriste) upotrebljivo.
+
+Fajl je organizovan na sledeci nacin: u prvoj liniji se nalazi broj tockova, a u svakoj sledecoj podaci o jednom tocku (starost, “letnja”/”zimska”/nista ako je u pitanju univerzalna guma). Kamion u jednom momentu koristi samo prvih 10 tockova iz niza, ostali su u rezervi. Stoga, kada se tockovi ucitaju iz fajla, potrebno je odmah pozvati metod postaviNajboljeTockove().
+
+U glavnoj klasi (2p) potrebno je napraviti instancu klase Kamion i simulirati u petlji voznju od 500 kilometara. Voznja se zavrsava kada se predju svi kilometri, ili kada ne moze vise da se vozi. Ispisati da li je kamion stigao na cilj ili se pokvario negde usput.

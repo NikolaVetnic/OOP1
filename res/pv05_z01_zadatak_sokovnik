@@ -1,0 +1,23 @@
+Vežbe 5 - Voće
+
+Klasa Voce sadrzi naziv voca i njegovu zapreminu (realan broj). Klasi dodati konstruktor koji prihvata vrednosti za navedena polja, get metod za zapreminu, kao i metod toString().
+ 
+Jabuka je voce koje moze biti crvljivo, te klasa sadrzi odgovarajuce polje logickog tipa. Omoguciti postavljanje vrednosti ovog polja kroz konstruktor klase, kao i citanje vrednosti polja preko get metoda.
+
+Ananas je voce sa kog puno otpadne kada se ljusti. Stoga se zapremina racuna samo kao 50% inicijalne zapremine (u metodu koji vraca zapreminu).
+ 
+Kontejner je objekat koji moze da sadrzi druge objekte. Predstavljen je interfejsom Kontejner sa dva metoda:
+- zapremina() - vraca ukupnu zapreminu kontejnera (realan broj).
+- komada"() - vraca broj objekata u kontejneru.
+
+Cediljka sluzi za cedjenje objekata (najcesce voca). Predstavljena je interfejsom Cediljka koji sadrzi jedan metod, "cedi", bez parametara i povratne vrednosti.
+ 
+Sokovnik moze da sadrzi voce i da ga cedi, te je istovremeno i kontejner i cediljka. Odgovarajuca klasa treba da sadrzi:
+- polja za ukupnu zapreminu sokovnika i broj komada ubacenog voca
+- niz ubacenog voca
+- konstruktor koji prihvata ukupnu zapreminu sokovnika
+- niz voca koje bi trebalo ubaciti. Medjutim, sokovnik ne prihvata crvljive jabuke, i mozda ne moze zapreminski prihvatiti svo voce. Stoga, konstruktor u polje klase "voce" kopira prvih n objekata prosledjenog niza tako sto preskace crvljive jabuke i vodi racuna o tome da ukupna zapremina ubacenog voca ne predje zapreminu sokovnika.
+- implementacije metoda oba interfejsa. Metod "cedi" jednostavno ispisuje opise iscedjenog voca.
+ 
+U glavnom programu ucitati podatke o vocu iz fajla "Voce.txt". U prvom redu u fajlu nalazi se broj voca Ne, dok narednih n redova sadrze podatke o vocu razdvojene zarezima: naziv, zapremina i string "da" ili "ne" (ako je u pitanju jabuka). Voce nakon toga ubaciti u sokovnik ukupne zapremine 1L. Posto je cilj u sokovnik ubaciti sto vise pojedinacnih komada voca, niz je
+prethodno potrebno sortirati rastuce po zapremini. Na kraju ispisati koliko je komada voca ubaceno u sokovnik i iscediti ga.

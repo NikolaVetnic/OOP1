@@ -20,4 +20,6 @@ Rešeni zadaci sa vežbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi
 - pv03_z02 - domaći zadatak: špajz, police i tegle
 - pv04_z01 - demonstracioni zadatak: polovni automobili
 - pv04_z02 - domaći zadatak: propagacija informacija (sa modifikacijama)
+- pv04_z03 - demonstracioni zadatak: poliklinika
+- pv05_z01 - demonstracioni zadatak: sokovnik
 - pv05_z02 - domaći zadatak: kamion i točkovi
