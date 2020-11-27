@@ -1,6 +1,6 @@
-package pv05_z02.wheels;
+package pv05_z02_p01.wheels;
 
-import pv05_z02.Util;
+import pv05_z02_p01.Util;
 
 public abstract class Wheel implements Comparable<Wheel> {
 	

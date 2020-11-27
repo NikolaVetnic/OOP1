@@ -1,4 +1,4 @@
-package pv04_z01;
+package pv04_z01_p02;
 
 import java.io.IOException;
 
@@ -6,7 +6,7 @@ public class Main {
 
 	public static void main(String[] args) throws IOException {
 		
-		Stovariste s = new Stovariste("res//polovnavozila.txt");
+		Stovariste s = new Stovariste("polovnavozila");
 		PolovniKombi[] r = s.najjeftinijiKombi();
 		
 		if (r == null)

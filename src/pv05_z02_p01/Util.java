@@ -1,4 +1,4 @@
-package pv05_z02;
+package pv05_z02_p01;
 
 import java.util.Random;
 

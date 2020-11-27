@@ -1,4 +1,4 @@
-package pv05_z02.wheels;
+package pv05_z02_p01.wheels;
 
 public class WheelWinter extends Wheel {
 

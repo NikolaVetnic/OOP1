@@ -1,7 +1,7 @@
-package pv04_z01;
+package pv04_z01_p02;
 
 public class PolovniAuto extends PolovnoVozilo {
-
+	
 	private int brojVrata;
 	
 	public PolovniAuto(int starost, int brojVrata) {
@@ -11,9 +11,7 @@ public class PolovniAuto extends PolovnoVozilo {
 
 	@Override
 	public int cena() {
-		
-		if (brojVrata > 3) return baznaCena();
-		else return (int) (.95 * baznaCena());
+		return brojVrata > 3 ? this.baznaCena() : (int) (this.baznaCena() * 0.95);
 	}
 
 	@Override

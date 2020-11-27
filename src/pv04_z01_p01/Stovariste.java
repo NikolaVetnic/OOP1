@@ -1,4 +1,4 @@
-package pv04_z01;
+package pv04_z01_p01;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

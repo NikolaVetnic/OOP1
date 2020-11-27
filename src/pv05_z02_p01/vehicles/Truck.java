@@ -1,4 +1,4 @@
-package pv05_z02.vehicles;
+package pv05_z02_p01.vehicles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import pv05_z02.Util;
-import pv05_z02.wheels.Wheel;
-import pv05_z02.wheels.WheelSummer;
-import pv05_z02.wheels.WheelUniversal;
-import pv05_z02.wheels.WheelWinter;
+import pv05_z02_p01.Util;
+import pv05_z02_p01.wheels.Wheel;
+import pv05_z02_p01.wheels.WheelSummer;
+import pv05_z02_p01.wheels.WheelUniversal;
+import pv05_z02_p01.wheels.WheelWinter;
 
 public class Truck {
 	

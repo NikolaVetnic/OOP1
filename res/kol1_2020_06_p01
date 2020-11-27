@@ -1,0 +1,13 @@
+Apstraktna klasa Patike imaju svoj tip (DUBOKE, PLITKE), vrsta (ODRASLE, DECIJE), boju, cenu, broj i marku (brend). Klasa sadrzi konstruktor, getere, setere za sva polja, kao i toString() metod.
+
+Klase Nike i Adidas nasledjuju klasu Patike. Nike je u 70% slucajeva duboka patike, dok je kod Adidasa to slucaj u 60%. Boja patike moze biti (BELA, CRNA i CRVENA), 33% sanse za svaku boju. Raspodela za vrstu je 50%. Cena patike je izmedju 2000 i 2500 ako su decije i 7000 i 12000 ako su za odrasle.
+
+Klasa Converse nasledjuje klasu Nike i cena je za 10% veca nego sto je to slucaj sa Nike-om za iste atribute. Takodje, Converse moze biti jos i ZUT i KREM, i raspodela je onda 20%.
+
+Klasa ProdavnicaPatika cuva patike u nizu koje se ucitavaju iz fajla “patike.txt”. Fajl je formatiran na sledeci nacin:
+- U prvom redu se nalazi broj patika
+- U svakom sledecem se nalazi marka (brend), broj.
+
+Klasa ProdavnicaPatika sadrzi metode koji izracunavaju prosecnu vrednost decijih patika, patika za odrasle i celoukupnu prosecnu vrednost patika u prodavnici. Takodje, klasa sadrzi main metod u kojem su pozvani svi njeni metodi.
+
+Pomoc: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html

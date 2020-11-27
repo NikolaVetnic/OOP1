@@ -1,8 +1,8 @@
-package pv05_z02;
+package pv05_z02_p01;
 
 import java.io.IOException;
 
-import pv05_z02.vehicles.Truck;
+import pv05_z02_p01.vehicles.Truck;
 
 public class Main {
 

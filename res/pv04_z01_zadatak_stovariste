@@ -1,0 +1,23 @@
+Vežbe 4 - Stovariste
+
+Apstraktnom klasom PolovnoVozilo se opisuje jedno polovno vozilo za prodaju.
+Klasa ima jedan atribut, starost vozila, i sledeće metode:
+- int cena() – apstraktni metod koji vraća cenu vozila
+- String opisVozila() – apstraktni metod koji vraća kratak opis vozila
+- String toString()
+- baznaCena() – zaštićeni metod koji vraća baznu cenu vozila koja se određuje na sledeći način: Cena vozila koje je starije od 20 godina je 400$. Za svaku godinu starosti se oduzima 70$ od cene novog vozila koje iznosi 2000$.
+
+Klasa PolovniAuto nasleđuje klasu PolovnoVozilo. Cena polovnog auta se određuje na osnovu bazne cene i broja vrata. Ukoliko je broj vrata veći od 3 tada je cena jednaka baznoj ceni. Inače se cena umanjuje za 5% od bazne cene.
+
+Klasa PolovniKombi nasleđuje klasu PolovnoVozilo. Cena polovnog kombija je jednaka baznoj ceni uvećanoj za 50$ po svakom sedištu.
+
+Klasa Stovariste opisuje skup polovnih vozila koje su u posedu firme za prodaju polovnih vozila. Podaci o vozilima na stovarištu se čitaju iz ulaznog fajla koji je formatiran na sledeći način:
+- u prvoj liniji fajla je broj vozila
+- u svakoj sledećoj liniji su podaci o jednom vozilu razdvojeni zarezima
+auto, <Starost>, <BrojVrata>
+kombi, <Starost>, <BrojSedišta>
+
+Klasa Stovariste takodje implementira metod
+- public PolovniKombi[] najjeftinijiKombi()
+koja vraća niz kombija sa najmanjom cenom
+ 

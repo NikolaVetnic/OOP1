@@ -1,0 +1,22 @@
+Vežbe 4 - Lekari
+
+Klasom Pacijent se opisuje jedan pacijent poliklinike. Svakog pacijenta odredjuje njegovo ime (String), prezime (String) i broj godina (int). Klasa sadrzi i konstruktor koji inicijalizuje sva polja, get metode i toString() metod.
+ 
+Apstraktna klasa Lekar opisuje jednog lekara njegovim imenom (string), prezimenom (string), nizom pacijenata koji dolaze kod njega i njihovim stvarnim brojem (int). Sva polja klase su privatna pa i za njih treba realizovati get metode. Osim toga treba kreirati konstruktor koji kao argumente prima ime i prezime lekara kao i maksimalan broj pacijenata koje on moze da prihvati, i sledece metode:
+
+public boolean prihvati(Pacijent p) - dodaje pacijenta u niz pacijenata tekuceg lekara ako je to moguce uciniti i povecava ukupan broj pacijenata za 1. Logicka vrednost koju metod vraca je signal da li je dodavanje uspelo ili ne.
+public abstract int plata() - vraca platu lekara.
+ 
+Klase Pedijatar i Pulmolog nasledjuju klasu Lekar. Pedijatar moze biti zaduzen za najvise 200 pacijenata, a Pulmolog za najvise 100. Plata pedijatra se racuna kao broj pacijenata za koje je zaduzen puta 300 dinara a plata pulmologa kao broj pacijenata puta 500 dinara. Pedijatar dodatno za svakog pacijenta mladjeg od 5 godina dobija 100 dinara bonusa na platu. Kod pedijatra je jos specificno da ne prihvata pacijente starije od 18 godina.
+
+Klasa Poliklinika sadrzi niz lekara. Informacije o lekarima u datoj poliklinici ucitavaju se iz tekstualnog fajla Lekari.txt. U prvoj liniji fajla je informacija o broju lekara, a u svake 3 naredne linije su podaci o jednom lekaru:
+ime, prezime, "pedijatar"/"pulmolog"
+
+Pacijenti se ucitavaju iz tekstualnog fajla Pacijenti.txt. U prvoj liniji fajla je informacija o broju pacijenata, a u svake 3 naredne linije su podaci o jednom pacijentu:
+ime, prezime, broj godina
+
+Pacijent se dodeljuje slucajno odabranom lekaru iz niza ukoliko moze, a ako ne, preskace se. Klasa takodje sadrzi sledece metode:
+metod koji vraca pulmologa koji ima najmanju platu
+metod koji vraca pedijatra ciji su pacijenti u proseku najstariji;
+
+U glavnom programu je potrebno napraviti instancu klase Poliklinika i ispisati rezultate izvrsavanja svih metoda te klase.
