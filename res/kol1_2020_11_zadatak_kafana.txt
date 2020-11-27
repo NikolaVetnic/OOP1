@@ -1,0 +1,23 @@
+Grupa 1
+
+Apstraktna klasa ​Pivo​ ​ima atribute proizvođač, jačinu (u procentima), boju i tip. Apstraktna klasa ima get-ere, set-ere, toString metod i apstraktni metod:
+- abstract boolean jeIzlapelo() - ​vraća da li je pivo pitko.
+
+Pšenično pivo, kraft pivo i crveno pivo nasleđuju klasu ​Pivo.​ ​Pšenično pivo​ je žuto ili
+narandžasto (50% šanse), jačinu od 5-6%. Ovo pivo je pitko u 90% slučajeva.
+
+Kraft pivo​ može biti nasumične boje (odabrati proizvoljno), i jačinu od 6-11%. Ovo je pivo je pitko od 70-90% slučajeva.
+
+Crveno pivo ​je pivo jačine 8% i pitko je u 50% slučajeva.
+
+Za sva 3 piva, potrebno je definisati metod ​jeIzlapelo​ na osnovu gorenavedenih informacija.
+
+Interfejs​ Sanker ​ima sledeći metod: void posluziPivo()
+
+Klasa ​Kafana​ implementira interfejs ​Sanker ​i sadrži polje sa nizom piva koja se mogu poslužiti. Piva se ucitavaju iz fajla “povoteka.txt”, a fajl je organizovan na sledeci nacin:
+- U prvom redu se nalazi broj piva
+- U svakom narednom redu se nalazi informacija o pojedinacnom pivu u formatu
+“proizvodjac”;”tip”
+
+Takođe sadrži ime i adresu kafane, kao i polje ​ukupnoPosluzenihPiva​. Od metoda ima toString metod koji vraća ime kafane i ukupnu količinu piva. Metod ​posluziPivo​ prolazi kroz niz piva, poslužuje ih ukoliko su pitka, te poveća brojač ​ukupnoPosluzenihPiva​. Pre posluzivanja svih piva u kafani, potrebno ih je sortirati po jacini. Od najslabijeg ka najjacem. Napraviti get metod za polje ukupnoPosluzenihPiva. Klasa ​Kafana​ sadrži metod koji vraća prosečnu jačinu piva u kafani.
+U glavnj klasi potrebno je napraviti instancu klase ​Kafana​ i pozvati sve metode.
