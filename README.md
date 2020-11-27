@@ -23,3 +23,7 @@ Rešeni zadaci sa vežbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi
 - pv04_z03 - demonstracioni zadatak: poliklinika
 - pv05_z01 - demonstracioni zadatak: sokovnik
 - pv05_z02 - domaći zadatak: kamion i točkovi
+
+## Kolokvijumi
+- kol1_2020_06 - prodavnica patika
+- kol1_2020_11 - kafana
