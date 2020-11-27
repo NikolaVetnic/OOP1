@@ -6,7 +6,7 @@ public class Converse extends Nike {
 		super(broj);
 		
 		this.setCena	(this.cena() * 1.1);
-		this.setBoja	(Patike.BOJA[Patike.rng.nextInt(5)]);
+		this.setBoja	(Osobina.BOJA[Patike.rng.nextInt(5)]);
 		this.setMarka	("Converse");
 	}
 

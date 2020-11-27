@@ -19,9 +19,11 @@ public class Main {
 			if (p0.vrsta().equals("ODRASLE")) odr++;
 		}
 		
-		System.out.println("dub = " + dub);
-		System.out.println("crv = " + crv);
-		System.out.println("brl = " + brl);
-		System.out.println("odr = " + odr);
+		System.out.println();
+		
+		System.out.println("DUBOKE  = " + dub);
+		System.out.println("CRVENA  = " + crv);
+		System.out.println("BELA    = " + brl);
+		System.out.println("ODRASLE = " + odr);
 	}
 }

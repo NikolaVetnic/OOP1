@@ -5,10 +5,10 @@ import java.util.Random;
 public abstract class Patike {
 	
 	public static Random rng = new Random(123813597236132938L);
-
-	public static final String[] TIP 	= { "DUBOKE", "PLITKE" };
-	public static final String[] VRSTA 	= { "ODRASLE", "DECIJE" };
-	public static final String[] BOJA 	= { "BELA", "CRNA", "CRVENA", "ZUTA", "KREM" };
+//
+//	public static final String[] TIP 	= { "DUBOKE", "PLITKE" };
+//	public static final String[] VRSTA 	= { "ODRASLE", "DECIJE" };
+//	public static final String[] BOJA 	= { "BELA", "CRNA", "CRVENA", "ZUTA", "KREM" };
 	
 	private String tip, vrsta, boja, marka;
 	private double cena;
