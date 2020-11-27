@@ -1,4 +1,4 @@
-package kol1_2020_11_p01.pivo;
+package kol1_2020_11_a_p01.pivo;
 
 public abstract class Pivo implements Comparable<Pivo> {
 

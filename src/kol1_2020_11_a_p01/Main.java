@@ -1,8 +1,8 @@
-package kol1_2020_11_p01;
+package kol1_2020_11_a_p01;
 
 import java.io.IOException;
 
-import kol1_2020_11_p01.kafana.Kafana;
+import kol1_2020_11_a_p01.kafana.Kafana;
 
 public class Main {
 

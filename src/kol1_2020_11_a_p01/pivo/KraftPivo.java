@@ -1,6 +1,6 @@
-package kol1_2020_11_p01.pivo;
+package kol1_2020_11_a_p01.pivo;
 
-import kol1_2020_11_p01.Osobina;
+import kol1_2020_11_a_p01.Osobina;
 
 public class KraftPivo extends Pivo {
 	

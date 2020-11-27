@@ -1,15 +1,15 @@
-package kol1_2020_11_p01.kafana;
+package kol1_2020_11_a_p01.kafana;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Arrays;
 
-import kol1_2020_11_p01.Osobina;
-import kol1_2020_11_p01.pivo.CrvenoPivo;
-import kol1_2020_11_p01.pivo.KraftPivo;
-import kol1_2020_11_p01.pivo.Pivo;
-import kol1_2020_11_p01.pivo.PsenicnoPivo;
+import kol1_2020_11_a_p01.Osobina;
+import kol1_2020_11_a_p01.pivo.CrvenoPivo;
+import kol1_2020_11_a_p01.pivo.KraftPivo;
+import kol1_2020_11_a_p01.pivo.Pivo;
+import kol1_2020_11_a_p01.pivo.PsenicnoPivo;
 
 public class Kafana implements Sanker {
 	
