@@ -1,0 +1,20 @@
+Šesti domaći
+
+Apstraktna klasa ​Polje​ predstavlja neku obradivu površinu i nosi informaciju o površini u hektarima (double), očekivani prinos u tonama (double) i broj ljudi koji mora da je obrađuje. Sadrži get i set metode za sva polja, toString metod kao i apstraktni metod:
+- public abstract double potencijalnaZarada()​ - računa potencijalnu zaradu na ovom polju
+
+Klasa ​Gazdinstvo​ ima svoje ​ime (String), satnicu​ koju isplaćuje radnicima (int),​ ​a takođe ima i niz ​Polja (​ duzine 5). Potrebno je implementirati sledeći metod:
+- public void dodajPolje(Polje P)​ - ​na prvo slobodno mesto u nizu polja dodaje novo polje
+
+Klase ​PoljePsenice​ i ​PoljeKukuruza ​su ​statičke ugnježdene klase ​unutar klase Gazdinstvo i nasleđuju apstraktnu klasu ​Polje​. Zarada ​po kilogramu​ na polju pšenice jeste 20 dinara, dok je za kukuruz to 15 dinara. Potrebno je definisati apstraktni metod iz apstrakne klase ​Polje​ tako da računa potrebne vrednosti na osnovu ovih informacija. Broj ljudi koji mora da obrađuje pšenicu jeste ​2 po hektaru, ​dok je za kukuruz ​3 po hektaru​.
+
+Klasa ​Registar​ sadrži niz ​Gazdinstava​. Ona se učitavaju iz fajla “gazdinstva.txt” gde se u prvoj liniji nalazi broj gazdinstava, a u svakoj sledećoj linije nalaze se:
+- Ime,satnica
+
+U klasi ​Registar potrebno je implementirati metode:
+- public Gazdinstvo najprofitabilnije(String tipUseva)​ - ​tipUseva može biti “psenica” ili “kukuruz”, a metod vraća ono gazdinstvo koje ima najveću potencijalnu zaradu na svim poljima gde se gaji prosleđeni usev.
+- public Gazdinstvo najštedljivije() - ​vraća gazdinstvo koje će najmanje potrošiti na satnicu
+Polja​ se učitavaju iz fajla “polja.txt”, gde u prvoj liniji stoji informacija o broju polja, a svaka naredna izgleda ovako:
+- tip polja,površina,očekivani prinos,ime gazdinstva kom pripada
+
+Pri učitavanju polja, potrebno ih je dodati u odgovarajuće gazdinstvo, na osnovu imena.
