@@ -1,0 +1,21 @@
+Grupa 2
+
+Apstraktna klasa ​uredjaj ​definiše neki elektronski uređaj. On je opisan jačinom procesora (double), količinom radne memorije ram (int), informacijom da li ima ugrađenu kameru (boolean), cenu (double) i boju (string). Validne boje su “crna”, “bela” i “siva”. Potrebno je implementirati get i set metode. Takođe ima apstraktni metod:
+- abstract boolean jePotrebanServis()​ - govori da li je potrebno odneti uređaj na servisiranje
+
+Klase DesktopRacunar, Laptop ​i Telefon​ nasleđuju apstraktnu klasu ​uredjaj​. Svi telefoni imaju kameru, nijedan desktop računar nema kameru, a informacija o kameri na laptopu se čita iz fajla. Kod svakog uređaja moguće je da se pokvare komponente: “procesor”, “maticna ploca” i “ram”. Šansa da desktop računar ima kvar je 3%, za laptop je to 5%, a za telefon 7%. Kvar se odnosi na nasumično izabranu komponentu od prethodno pomenute 3. Metod ​jePotrebanServis​ ispisuje poruku u obliku
+- “​komponenta ​je pokvaren(a), potreban je servis!” - gde se na mesto komponente umetne nasumično odabrana komponenta. Мetod takođe vraća boolean koji govori da li je potrebno servisirati uređaj.
+
+Interfejs ​servis ​reprezentuje neki servis elektronskih uređaja. Оn u sebi ima metod
+- boolean popravi()
+
+Кlasa ​prodavnica ​ima niz uređaja koje učitava iz fajla “uredjaji.txt”. Pored ovog niza, ima još jedan niz uređaja zvani ​zaServis​, koji je fiksiran na dužinu 3 i u početku je prazan. Nakon učitavanja iz fajla, potrebno je pozvati metod:
+double prodaj() - ​koji prolazi kroz listu svih uređaja i “proda ih” ukoliko je moguće, a moguće je ako uređaj nije potrebno servisirati. Ako ga treba servisirati, uređaj se ubacuje u listu uređaja za servis ukoliko ima mesta, inače ne radi ništa s tim uređajem. Metod vraća prosečnu cenu svih prodatih uređaja.
+
+Prodavnica​ implementira interfejs ​servis. Metod popravi prolazi kroz uređaje iz niza za servisiranje i vraća true ukoliko je svaki uspešno popravljen. Verovatnoća da se mobilni telefon popravi jeste 80%, a za ostale uređaje je 75%.
+
+U prvoj liniji fajla “uredjaji.txt” nalazi se broj uređaja, a u svakoj narednoj:
+- tip, boja, procesor, ram, cena - ​za desktop računare i telefone
+- tip, boja, procesor, ram, cena, kamera - ​za laptopove
+
+U glavnoj klasi, u main metodu, potrebno je kreirati jednu prodavnicu i pozvati metode prodaj i popravi i ispisati rezultate.
