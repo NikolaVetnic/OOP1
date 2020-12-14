@@ -1,0 +1,6 @@
+4, 5.5, 1, vece ili jednako, 65
+Pera, 5.5, 1, vece ili jednako, 65
+Mika
+Zika, 4, 2, manje, 46
+Brana, 5.5, 1, manje, 65
+Jana, 5.5, 1, vece ili jednako, 65

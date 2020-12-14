@@ -1,0 +1,26 @@
+Vežbe 7 - Škola
+
+Klasom DomaciRad predstavljen je jedan domaci rad. Klasa kao atribute sadrzi ime ucenika (String), niz Stringova koji predstavljaju resenja zadataka i ocenu (int). Klasa sadrzi konstruktor kojim se inicijalizuju ime i resenja, getere, seter za ocenu, kao i toString() metod.
+
+Interfejs Nastavnik definise akcije jednog nastavnika. Sadrzi metode:
+void odrziRoditeljski()
+void pregledajZadatke(String predmet)
+
+NijePredatDomaci je izuzetak koji se generise ukoliko ucenik nije predao domaci iz odredjenog predmeta. Poruka se generise na osnovu imena ucenika i predmeta i prosledjuje se konstrukoru nadklase.
+
+FaliZadatak je izuzetak koji se generise ukoliko ucenik iz nekog predmeta nije predao resenja svih zadataka. Izuzetak cuva referencu na taj domaci rad.
+
+Klasa Uciteljica implementira interfejs Nastavnik. Klasa sadrzi niz pregledanih zadataka i String koji sadrzi nazive predmeta za koje su zadaci pregledani. 
+
+Metoda odrziRoditeljski() treba da odstampa predmete za koje su zadaci pregledani, kao i podatke o svim pregledanim zadacima. Kada se roditeljski zavrsi, polja se anuliraju, da bi na sledecem roditeljskom uciteljica obavestila roditelje samo o najnovijim ocenama. Ukoliko nema informacijama o ocenama (polja su null), a roditeljski treba da se odrzi, uciteljica prica o ekskurziji.
+
+Metoda pregledajZadatke(String predmet) kao argument prima ime fajla u kom su zadaci iz jednog predmeta. Uciteljica pregleda jedan po jedan zadatak. Ako je ucenik predao 0 zadataka, kreira se NijePredatDomaci, a ukoliko je predao manje od zadatog broja zadataka, kreira se FaliZadatak. U suprotnom, ako su sva resenja dobra, ocena je 5, ako nijedno nije dobro, ocena je 1, a inace je ocena random broj izmedju 2 i 4.
+
+Fajlovi "matematika.txt", "srpski.txt" i "engleski.txt" predstavljaju fajlove sa podacima o domacim radovima. Fajlovi su organizovani na sledeci nacin:
+U prvom redu nalazi se broj zadataka u domacem radu i potom niz resenja zadataka razdvojenih zarezima : <brojZadataka>, <resenje>, <resenje> ... 
+Svaki sledeci red sadrzi ime ucenika i niz njegovih resenja (kojih moze biti 0 ili vise) razdvojenih zarezima: <ime>, <resenje>, <resenje> ...
+
+Fajl "akcije.txt" sadrzi niz akcija koje uciteljica izvrsava. Ukoliko je akcija "roditeljski", uciteljica odrzava roditeljski, a ukoliko je akcija "pregledaj <predmet>", uciteljica pregleda zadatke iz predmeta.
+
+Ne pretpostavljamo da su fajlovi dobro formatirani, ali obradjujemo sve greske pri radu sa
+fajlovima, kao i greske koje generise uciteljica.

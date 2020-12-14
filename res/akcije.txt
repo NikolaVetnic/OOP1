@@ -1,0 +1,7 @@
+pregledaj likovno.txt
+roditeljski
+pregledaj matematika.txt
+roditeljski
+pregledaj srpski.txt
+pregledaj engleski.txt
+roditeljski
