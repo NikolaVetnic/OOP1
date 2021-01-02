@@ -9,8 +9,7 @@ Interfejs Mixer definise funkcionalnosti potrebne za pravljenje vocnog koktela. 
 
 GreskaDodavanje i GreskaMuckanje su izuzeci koji mogu biti generisani prilikom izvrsavanja metoda dodajVoce() i promuckaj(). 
 
-GreskaDodavanje se generise ukoliko u koktel pokusa da se stavi voce koje se ne slaze sa nekim vocem koje je vec u koktelu.
-Poruka se generise na osnovu vrste voca i prosledjuje konstruktoru nadklase. Izuzetak takodje cuva referencu na sok koji nije uspeo da se doda. 
+GreskaDodavanje se generise ukoliko u koktel pokusa da se stavi voce koje se ne slaze sa nekim vocem koje je vec u koktelu. Poruka se generise na osnovu vrste voca i prosledjuje konstruktoru nadklase. Izuzetak takodje cuva referencu na sok koji nije uspeo da se doda. 
 
 GreskaMuckanje se generise ukoliko se prilikom muckanja prospe koktel, ili razbije casa. Izuzetak prima u konstruktoru odgovarajucu poruku i prosledjuje je konstruktoru nadklase.
 

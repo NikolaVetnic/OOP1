@@ -1,4 +1,4 @@
-package kol1_2020_06_p01;
+package kol_2020_06_p01;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

@@ -1,0 +1,12 @@
+Nikola;24;10000
+Marko;12;12500
+Milan;40;20000
+Kolja;34;30200
+Mare;15;15500
+Mile;47;45000
+Nikola;24;10000
+Marko;12;12500
+Milan;40;20000
+Kolja;34;30200
+Mare;15;15500
+Mile;47;45000

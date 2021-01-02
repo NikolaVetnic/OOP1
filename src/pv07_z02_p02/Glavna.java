@@ -21,7 +21,14 @@ public class Glavna {
 			
 			while ((linija = in.readLine()) != null) {
 				
-				dodajVoce(b, linija);
+				try {
+					dodajVoce(b, linija);
+				} catch (IOException e) {
+					System.out.println(e.getMessage());
+				}
+				
+				if (!b.imaVoca()) continue;
+				
 				try {
 					b.promuckaj();
 				} catch (GreskaMuckanje e) {

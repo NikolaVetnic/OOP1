@@ -1,18 +1,20 @@
-package kol1_2020_06_p01;
+package kol_2020_06_p01;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
-public class ProdavnicaPatika {
+public class ProdavnicaPatika implements Prodavnica {
 	
 
 	Patike[] patike;
+	Red kupci;
 	
 	
-	public ProdavnicaPatika(String input) throws IOException {
+	public ProdavnicaPatika(String patikeIn, String kupciIn) throws IOException {
 		
-		String file = "res//" + input + ".txt";
+		String file = "res//" + patikeIn + ".txt";
 		
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		
@@ -30,10 +32,51 @@ public class ProdavnicaPatika {
 			else								patike[i] = new Converse(broj);
 		}
 		
+		ucitajKupce("res//" + kupciIn + ".txt");
+		
 		br.close();
 	}
 	
 	
+	private void ucitajKupce(String file) {
+		
+		try (BufferedReader in = 
+				new BufferedReader(
+				new FileReader(file))) {
+			
+			kupci = new Red();
+			String line;
+			
+			while ((line = in.readLine()) != null) {
+				
+				try {
+					dodajKupca(line);
+				} catch (IOException e) {
+					System.out.println("Nije dobra linija -> " + e.getMessage());
+				}
+			}
+			
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+
+	private void dodajKupca(String line) throws IOException {
+		
+		String[] tokens = line.split(";");
+		
+		if (tokens.length != 3) {
+			throw new IOException("Nije dobra linija -> " + line);
+		} else {
+			kupci.naKraj(new Kupac(
+					tokens[0].trim(),
+					Integer.parseInt(tokens[1].trim()),
+					Double.parseDouble(tokens[2].trim())));
+		}
+	}
+
+
 	public double[] prosecnaCena() {
 		
 		double sumD = 0.0, sumO = 0.0;
@@ -91,7 +134,7 @@ public class ProdavnicaPatika {
 	}
 	
 	
-	public void print() {
+	public void stampajPatike() {
 		
 		for (Patike p : patike)
 			System.out.println(p);
@@ -99,11 +142,76 @@ public class ProdavnicaPatika {
 	}
 	
 	
+	public void stampajKupce() {
+		
+		while (!kupci.jePrazan()) {
+			System.out.println(kupci.prvi());
+			kupci.izbaciPrvi();
+		}
+		
+		System.out.println();
+	}
+	
+	
+	@Override
+	public void sledeci() throws NemaViseKupaca {
+		kupci.izbaciPrvi();
+		
+		if (kupci.jePrazan())
+			throw new NemaViseKupaca();
+		
+	}
+	
+	
+	@Override
+	public void kupi() throws NemaDovoljnoNovca {
+		
+		Patike ptk = getRandomPatike();
+		Kupac k = (Kupac) kupci.prvi();
+		
+		if (k.nvc() < ptk.cena()) {
+			
+			try {
+				sledeci();
+			} catch (NemaViseKupaca e) {
+				System.out.println(e.getMessage());
+			}
+			
+			throw new NemaDovoljnoNovca(k);
+		}
+		
+		System.out.println("Kupac " + k.ime() + " kupuje " + ptk.marka() + " patike!");
+	}
+	
+	
+	private Patike getRandomPatike() {
+		return patike[new Random().nextInt(patike.length)];
+	}
+	
+	
+	public void pocetakRadnogVremena() {
+		
+		while (!kupci.jePrazan()) {
+			try {
+				kupi();
+				sledeci();
+			} catch (NemaDovoljnoNovca e) {
+				System.out.println(e.toString());
+			} catch (NemaViseKupaca e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+
+
 	public static void main(String[] args) throws IOException {
 		
-		ProdavnicaPatika pp = new ProdavnicaPatika("patike");
-		pp.print();
+		ProdavnicaPatika pp = new ProdavnicaPatika("patike", "kol2_2020_06_p01_kupci");
+//		pp.stampajPatike();
+//		pp.stampajKupce();
+//		
+//		pp.printStats();
 		
-		pp.printStats();
+		pp.pocetakRadnogVremena();
 	}
 }

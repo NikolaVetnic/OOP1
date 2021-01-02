@@ -46,6 +46,11 @@ public class Barmen implements Mixer {
 		
 		return true;
 	}
+	
+	
+	public boolean imaVoca() {
+		return sokovi != null && sokovi.size() != 0;
+	}
 
 
 	@Override
@@ -64,6 +69,7 @@ public class Barmen implements Mixer {
 
 	@Override
 	public void posluzi() {
+		System.out.print("Posluzujem sok : ");
 		printSokovi();
 		anuliraj();
 	}
