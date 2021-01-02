@@ -1,0 +1,27 @@
+Sedmi domaci
+
+Klasom VocniSok predstavljen je jedan sok od svezeg voca. Klasa kao atribute sadrzi vrstu voca (String), broj komada voca koji idu u sok (int) i kolicinu soka u litrama (double). Klasa sadrzi getere za sva polja, seter samo za broj komada voca, konstruktor koji inicijalizuje vrstu voca i broj komada voca i toString() metod. Od jednog komada voca dobija se 0.1 litar soka i ova vrednost se uvek ponovo izracunava kada se postavi nova vrednost za broj komada voca.
+
+Interfejs Mixer definise funkcionalnosti potrebne za pravljenje vocnog koktela. Definisane su metode
+- void dodajVoce(String voce, int brojKomada) throws GreskaDodavanje 
+- void promuckaj() throws GreskaMuckanje
+- void posluzi()
+
+GreskaDodavanje i GreskaMuckanje su izuzeci koji mogu biti generisani prilikom izvrsavanja metoda dodajVoce() i promuckaj(). 
+
+GreskaDodavanje se generise ukoliko u koktel pokusa da se stavi voce koje se ne slaze sa nekim vocem koje je vec u koktelu.
+Poruka se generise na osnovu vrste voca i prosledjuje konstruktoru nadklase. Izuzetak takodje cuva referencu na sok koji nije uspeo da se doda. 
+
+GreskaMuckanje se generise ukoliko se prilikom muckanja prospe koktel, ili razbije casa. Izuzetak prima u konstruktoru odgovarajucu poruku i prosledjuje je konstruktoru nadklase.
+
+Klasa Barmen implementira interfejs Mixer. Barmen sadrzi jednostruko povezanu listu vocnih sokova od kojih trenutno pravi koktel. Barmen takodje sadrzi matricu stringova dimenzije n x 2 koju prima kao parametar u konstruktoru, a koja predstavlja parove voca koji se ne mesaju zajedno. Kada se dodaje voce u koktel, ova matrica sluzi kao uputstvo da li voce sme ili ne sme da se ubaci. Barmen je poprilicno smotan, pa prilikom muckanja prospe svaki treci koktel, a razbije svaki sedmi, pa se lista anulira.
+
+Kada barmen posluzi koktel, ispisuje se sadrzaj koktela (sve vrste voca i ukupna kolicina u litrama), a lista voca se takodje anulira.
+
+Klasa JuiceBar sadrzi main metod u kom se inicijalizuje objekat tipa Barmen na osnovu infomacija iz fajla "Sokovi.txt". Prva linija u fajlu je prva dimenzija matrice sa parovima voca koji se ne mesaju (n). Narednih n linija su formata
+<vrsta voca>,<vrsta voca>
+
+Nakon toga nalaze se linije formata
+<vrsta voca>, <broj komada> {, <vrsta voca>, <broj komada>}
+
+koje opisuju narucene vocne koktele. Barmen dodaje vocku po vocku dok ne dodje do kraja linije, potom promucka koktel, posluzi ga, pa prelazi na sledeci koktel. Ne pretpostavljamo da je ulazni fajl ispravno formatiran, ali izvrsavamo sve ispravne linije. Treba obraditi sve izuzetke koji se mogu generisati pri radu sa fajlom, kao i izuzetke koje generise klasa Barmen.
