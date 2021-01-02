@@ -1,4 +1,4 @@
-Vežbe 7 - Škola
+Vezbe 7 - Skola
 
 Klasom DomaciRad predstavljen je jedan domaci rad. Klasa kao atribute sadrzi ime ucenika (String), niz Stringova koji predstavljaju resenja zadataka i ocenu (int). Klasa sadrzi konstruktor kojim se inicijalizuju ime i resenja, getere, seter za ocenu, kao i toString() metod.
 

@@ -1,0 +1,21 @@
+Izuzeci su objekti kojima se signalizira pojava neke greske prilikom i-
+zvrsavanja programa. Moguce ih je:
+	- generisati (naredba throw), cime se signalizira pojava greske (k-
+	  od proveravanih se tipovi specifiraju u zaglavlju metode iza klj-
+	  ucne reci. throws)
+	- obraditi (try-catch-finally, try-with-resources), cime se obradj-
+	  uje nastala greska tako sto, ako se izuzetak generise, tok se pr-
+	  ebacuje na odgovarajucu catch granu, dok se finally grana izvrsa-
+	  va u svakom slucaju
+	- proslediti (throws sa svim tipovima koji se prosledjuju), cime se
+	  izuzetak prosledjuje metodi koja ga je pozvala i koja ce ga zatim
+	  i obraditi
+	  
+Dve vrste:
+	- proveravani, izuzetak koji se MORA obraditi ili proslediti
+	- neproveravani, izuzetak koji se NE MORA ni obraditi ni proslediti
+	  (najcesce je u pitanju bug koji se popravlja a ne obradjuje)
+	  
+Izuzeci su objekti klase Exception ili klase koja nasledjuje Exception;
+neproveravani su objekti RuntimeException; nove izuzetke definisemo na-
+sledjivanjem klase Exception (direktno ili indirektno).  
