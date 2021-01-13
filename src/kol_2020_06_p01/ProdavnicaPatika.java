@@ -108,16 +108,16 @@ public class ProdavnicaPatika implements Prodavnica {
 		
 		for (Patike p : patike) {
 			
-			if (p.tip().equals("DUBOKE")) tip[0]++;
-			else						  tip[1]++;
+			if (p.tip().equals("DUBOKE")) 		tip[0]++;
+			else						  		tip[1]++;
 			
-			if (p.vrsta().equals("DECIJE")) vrsta[1]++;
-			else							vrsta[0]++;
+			if (p.vrsta().equals("DECIJE")) 	vrsta[1]++;
+			else								vrsta[0]++;
 			
-			if 		(p.boja().equals("BELA")) boja[0]++;
-			else if (p.boja().equals("CRNA")) boja[1]++;
+			if 		(p.boja().equals("BELA")) 	boja[0]++;
+			else if (p.boja().equals("CRNA")) 	boja[1]++;
 			else if (p.boja().equals("CRVENA")) boja[2]++;
-			else if (p.boja().equals("ZUTA")) boja[3]++;
+			else if (p.boja().equals("ZUTA")) 	boja[3]++;
 			else boja[4]++;
 			
 			if (p instanceof Adidas) marka[0]++;

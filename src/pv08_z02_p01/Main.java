@@ -21,14 +21,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	
-	/*
-	 * Nisam mogao da namestim JavaFX u novom projektu pa sam, da ne b-
-	 * ih gubio vreme, overwrite-ovao neki test projekat i uradio zada-
-	 * tak - odatle naziv TestFX...
-	 */
-	
-	
-	public static final String FILE = "res//spisak.txt";
+	public static final String FILE = "res//pv08_z02_spisak.txt";
 	
 	
 	private TextField predmet;
