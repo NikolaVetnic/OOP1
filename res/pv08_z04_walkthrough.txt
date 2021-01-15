@@ -1,0 +1,31 @@
+1. Kreiranje praznog fajla i konstanti sa putanjama ka .txt fajlovima;
+
+2. Kreiranje BorderPane() bpLogin kao polja na vrhu, podesavanje padding-a u start() metodu, postavljanje Left i Bottom komponenti takodje u start() metodu u vidu poziva metoda koji ih kreiraju, kreiranje scene koja kao argument prima BorderPane i velicinu, postavljanje scene sa primaryStage.setScene(scene), postavljanje naslova i prikazivanje scene sa .show()
+
+3. Kreiranje loginIO() : kreiranje GridPane-a u metodu, postavljanje Hgap i Vgap, dodavanje labela (gp.add() prima tri argumenta: sta se dodaje, VERTIKALNU pa tek onda HORIZONTALNU poziciju u gridu), dodavanje polja za user i pass (koja su polja) na isti nacin
+
+4. Kreiranje loginControlPanel() : kreiranje HBox-a u metodu, postavljanje razmaka setSpacing(), dodavanje Login dugmeta (koje je polje) preko .getChildren().add(), postavljanje poravnanja sa setAlignment
+
+5. Dodavanje linije btnLogin.setOnAction(this::action); u start metod i kreiranje action() metoda;
+
+6. action(ActionEvent evt) : provera da li je kao user ili pass unet prazan tekst - ako jeste, prikazivanje Alerta i return, ako nije proverava se da li metoda login() vraca true - ako da, kreira se novi Alert o uspesnom logovanju kao i Optional<ButtonType> btn = a.showAndWait(); (ne razumem mehaniku ovoga za sada), nakon cega ide provera if (btn.isPresent() && btn.get() == ButtonType.OK) i ako da, pokrece se showNext(); (ovu proveru takodje za sada ne razumem) a ako ne polja se resetuju, izbacuje se Alert i vraca se na Login prozor;
+
+7. resetLoginFields() - prosto postavljanje teksta u user i pass polju na "";
+
+8. login() - pokrecemo try-with-resources gde sa BufferedReader/FileReader otvaramo fajl sa sluzbenicima i prolazimo liniju po liniju kroz fajl poredeci user i pass koje dobijamo iz polja sa onima koje citamo iz fajla - cim pronadjemo poklapanje vracamo true, u suprotnom na kraju vracamo false, hvatamo IOException;
+
+9. showNext() - radi se o metodu koji prikazuje 'glavni' prozor aplikacije i funkcionise slicno start() metodu, sa tom razlikom da se sada kreira i novi stage nakon cega se u njega pakuje scena kao i ranije, ovde se sa .setLeft() poziva referentIO() a sa .setBottom referentControlPanel()
+
+PROBLEM - prethodni login prozor ostaje u pozadini, ako se vratimo na njega i pokusamo novi login imacemo dva 'glavna' prozora ali jedan ce biti bez polja za unos... Ovo vrv nije bitno za kolokvijum ali jeste problem.
+
+10. referentIO() - kreiranje GridPane-a i slaganje u njega labela i polja za unos podataka, dodavanje text field-ova ide standardno, combo box-ovi imaju drugaciji postupak (vidi kod)
+
+11. referentControlPanel() - kreiranje HBox-a i dodavanje jednog dugmeta
+
+12. Dodaje se btnUpisi.setOnAction(this::compute) u showNext()
+
+13. compute(ActionEvent evt) : provera svih tekst polja na prazan unos i odgovarajuci Alert ako jeste, takodje provera da li je unesen prosek double, nakon svega toga saveInFile() i resetovanje polja sa resetReferentFields() (slicno manjoj metodi kod Login prozora)
+
+14. saveInFile() - trazimo od korisnika potvrdu da zeli da cuva studenta (vidi kod) i idemo na snimanje u fajl
+
+15. save() - manje vise standardna stvar, liniju formiramo u odnosu na godinu studija, sve smestamo u listu i pomocu try-with-resources sa PrintWriterom pisemo sve u fajl
