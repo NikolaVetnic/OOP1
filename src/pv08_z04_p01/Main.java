@@ -76,6 +76,7 @@ public class Main extends Application {
 		
 		Scene scene = new Scene(bpLogin, 320, 130);
 		primaryStage.setScene(scene);
+		primaryStage.setResizable(false);
 		primaryStage.setTitle("Studentska sluzba: Login");
 		primaryStage.show();
 	}
@@ -176,6 +177,7 @@ public class Main extends Application {
 		Stage stage = new Stage();
 		Scene scene = new Scene(bpReferent, 350, 275);
 		stage.setScene(scene);
+		stage.setResizable(false);
 		stage.setTitle("Referent : " + txtUser.getText());
 		stage.show();
 	}
