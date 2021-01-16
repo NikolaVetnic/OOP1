@@ -35,6 +35,9 @@ public class Main extends Application {
 	public static final String FAJL_SLUZBENICI = "res//pv08_z04_sluzbenici.txt";
 	
 	
+	public static Stage primaryStage;
+	
+	
 	private BorderPane bpLogin = new BorderPane();
 	private BorderPane bpReferent = new BorderPane();
 	
@@ -67,6 +70,8 @@ public class Main extends Application {
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
+		this.primaryStage = primaryStage;
 		
 		bpLogin.setPadding(new Insets(10));
 		bpLogin.setLeft(loginIO());
@@ -126,6 +131,7 @@ public class Main extends Application {
 			
 			if (btn.isPresent() && btn.get() == ButtonType.OK) {
 				showNext();
+				primaryStage.hide();
 			}
 		} else {
 			new Alert(Alert.AlertType.ERROR, "Pogresni podaci, pokusajte ponovo.").showAndWait();
