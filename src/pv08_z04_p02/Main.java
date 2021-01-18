@@ -1,4 +1,4 @@
-package pv08_z04_p01;
+package pv08_z04_p02;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,24 +31,27 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	
-	public static final String FAJL_STUDENTI = "res//pv08_z04_studenti.txt";
-	public static final String FAJL_SLUZBENICI = "res//pv08_z04_sluzbenici.txt";
+	public static final String F_STUDENTI = "res//pv08_z04_studenti.txt";
+	public static final String F_REFERENT = "res//pv08_z04_sluzbenici.txt";
+
 	
-	
-	public static Stage primaryStage;
+	private static Stage primaryStage;
 	
 	
 	private BorderPane bpLogin = new BorderPane();
 	private BorderPane bpReferent = new BorderPane();
 	
-	// loginIO() komponente
+	// loginIO()
+	private GridPane gpLogin = new GridPane();
 	private TextField txtUser = new TextField();
 	private PasswordField txtPass = new PasswordField();
 	
-	// loginControlPanel() komponente
+	// loginControlPanel()
+	private HBox hbLogin = new HBox();
 	private Button btnLogin = new Button("Login");
 	
-	// referentIO() komponente
+	// referentIO()
+	private GridPane gpRfrnt = new GridPane();
 	private TextField txtStudentIme = new TextField();
 	private TextField txtStudentPrezime = new TextField();
 	private TextField txtStudentBrInd = new TextField();
@@ -56,18 +59,19 @@ public class Main extends Application {
 	ComboBox<Integer> comboGodina = new ComboBox<Integer>();
 	private TextField txtStudentProsek = new TextField();
 	
-	// referentControlPanel() komponente
-	Button btnUpisi = new Button("Upisi studenta u narednu godinu");
+	// referentControlPanel()
+	private HBox hbRfrnt = new HBox();
+	private Button btnUpisi = new Button("Upisi studenta u narednu godinu");
 	
 	
 	private List<String> listaZaIspis;
 	
 	
 	public static void main(String[] args) {
-        launch(args);
-    }
-
+		launch(args);
+	}
 	
+
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
@@ -77,51 +81,49 @@ public class Main extends Application {
 		bpLogin.setLeft(loginIO());
 		bpLogin.setBottom(loginControlPanel());
 		
-		btnLogin.setOnAction(this::action);
+		btnLogin.setOnAction(this::authenticate);
 		
-		Scene scene = new Scene(bpLogin, 320, 130);
-		primaryStage.setScene(scene);
+		Scene s = new Scene(bpLogin, 320, 130);
+		primaryStage.setScene(s);
 		primaryStage.setResizable(false);
-		primaryStage.setTitle("Studentska sluzba: Login");
+		primaryStage.setTitle("Studentska sluzba : Login");
 		primaryStage.show();
 	}
+	
 
-
-	private Node loginIO() {
+	private GridPane loginIO() {
 		
-		GridPane gp = new GridPane();
-		gp.setHgap(20);
-		gp.setVgap(10);
+		gpLogin.setHgap(20);
+		gpLogin.setVgap(10);
 		
-		gp.add(new Label("Unesite username"), 0, 0);
-		gp.add(txtUser, 1, 0);
-		gp.add(new Label("Unesite password"), 0, 1);
-		gp.add(txtPass, 1, 1);
+		gpLogin.add(new Label("Unesite username"), 0, 0);
+		gpLogin.add(txtUser, 1, 0);
+		gpLogin.add(new Label("Unesite password"), 0, 1);
+		gpLogin.add(txtPass, 1, 1);
 		
-		return gp;
+		return gpLogin;
 	}
 
-
-	private Node loginControlPanel() {
+	
+	private HBox loginControlPanel() {
 		
-		HBox hb = new HBox();
-		hb.setSpacing(10);
-		hb.getChildren().add(btnLogin);
-		hb.setAlignment(Pos.BOTTOM_CENTER);
+		hbLogin.setSpacing(10);
+		hbLogin.getChildren().add(btnLogin);
+		hbLogin.setAlignment(Pos.BOTTOM_CENTER);
 		
-		return hb;
+		return hbLogin;
 	}
+	
 
-
-	private void action(ActionEvent evt) {
+	private void authenticate(ActionEvent evt) {
 		
 		if (txtUser.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije uneseno korisnicko ime.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije uneseno korisnicko ime!").showAndWait();
 			return;
-		} 
+		}
 		
 		if (txtPass.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije unesena lozinka.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije unesena lozinka!").showAndWait();
 			return;
 		}
 		
@@ -134,19 +136,19 @@ public class Main extends Application {
 				primaryStage.hide();
 			}
 		} else {
-			new Alert(Alert.AlertType.ERROR, "Pogresni podaci, pokusajte ponovo.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Pogresni podaci, pokusajte ponovo!").showAndWait();
 			resetLoginFields();
 		}
 	}
-
-
+	
+	
 	private boolean login() {
 		
-		try (BufferedReader br = new BufferedReader(new FileReader(FAJL_SLUZBENICI))) {
+		try (BufferedReader in = new BufferedReader(new FileReader(F_REFERENT))) {
 			
 			String line = null;
 			
-			while ((line = br.readLine()) != null) {
+			while ((line = in.readLine()) != null) {
 				
 				String[] tokens = line.split(",");
 				String user = tokens[0].trim();
@@ -160,18 +162,18 @@ public class Main extends Application {
 			return false;
 			
 		} catch (IOException e) {
-			System.out.println("Greska prilikom citanja fajla -> " + e.getMessage());
+			new Alert(Alert.AlertType.ERROR, "Greska prilikom citanja fajla -> " + e.getMessage()).showAndWait();
 			return false;
 		}
 	}
 	
-	
+
 	private void resetLoginFields() {
 		txtUser.setText("");
 		txtPass.setText("");
 	}
 	
-	
+
 	private void showNext() {
 		
 		bpReferent.setPadding(new Insets(10));
@@ -181,81 +183,76 @@ public class Main extends Application {
 		btnUpisi.setOnAction(this::compute);
 		
 		Stage stage = new Stage();
-		Scene scene = new Scene(bpReferent, 350, 275);
-		stage.setScene(scene);
+		Scene s = new Scene(bpReferent, 350, 275);
+		stage.setScene(s);
 		stage.setResizable(false);
 		stage.setTitle("Referent : " + txtUser.getText());
 		stage.show();
 	}
-
-
+	
+	
 	private Node referentIO() {
 		
-		GridPane gp = new GridPane();
-		gp.setHgap(20);
-		gp.setVgap(10);
+		gpRfrnt.setHgap(20);
+		gpRfrnt.setVgap(10);
 		
-		gp.add(new Label("Ime studenta"), 0, 0);
-		gp.add(txtStudentIme, 1, 0);
-		gp.add(new Label("Prezime studenta"), 0, 1);
-		gp.add(txtStudentPrezime, 1, 1);
-		gp.add(new Label("Broj indeksa"), 0, 2);
-		gp.add(txtStudentBrInd, 1, 2);
-		gp.add(new Label("Studijski program"), 0, 3);
+		gpRfrnt.add(new Label("Ime studenta"), 0, 0);
+		gpRfrnt.add(txtStudentIme, 1, 0);
+		gpRfrnt.add(new Label("Prezima studenta"), 0, 1);
+		gpRfrnt.add(txtStudentPrezime, 1, 1);
+		gpRfrnt.add(new Label("Broj indeksa"), 0, 2);
+		gpRfrnt.add(txtStudentBrInd, 1, 2);
+		gpRfrnt.add(new Label("Studijski program"), 0, 3);
 		
 		ObservableList<String> cbProgram = comboStudijskiProgram.getItems();
 		cbProgram.add("Informacione tehnologije");
 		cbProgram.add("Racunarske nauke");
 		comboStudijskiProgram.getSelectionModel().select(0);
-		gp.add(comboStudijskiProgram, 1, 3);
+		gpRfrnt.add(comboStudijskiProgram, 1, 3);
 		
-		gp.add(new Label("Godina stidja"), 0, 4);
+		gpRfrnt.add(new Label("Godina studija"), 0, 4);
 		
 		ObservableList<Integer> cbGod = comboGodina.getItems();
-		cbGod.add(1);
-		cbGod.add(2);
-		cbGod.add(3);
-		cbGod.add(4);
+		for (int i = 1; i < 5; i++) cbGod.add(i);
 		comboGodina.getSelectionModel().select(0);
-		gp.add(comboGodina, 1, 4);
+		gpRfrnt.add(comboGodina, 1, 4);
 		
-		gp.add(new Label("Prosecna ocena"), 0, 5);
-		gp.add(txtStudentProsek, 1, 5);
+		gpRfrnt.add(new Label("Prosecna ocena"), 0, 5);
+		gpRfrnt.add(txtStudentProsek, 1, 5);
 		
-		return gp;
+		return gpRfrnt;
 	}
 
-
+	
 	private Node referentControlPanel() {
 		
-		HBox hb = new HBox();
-		hb.setSpacing(15);
-		hb.setAlignment(Pos.BOTTOM_CENTER);
-		hb.getChildren().add(btnUpisi);
+		hbRfrnt.setSpacing(15);
+		hbRfrnt.setAlignment(Pos.BOTTOM_CENTER);
+		hbRfrnt.getChildren().add(btnUpisi);
 		
-		return hb;
+		return hbRfrnt;
 	}
-
+	
 
 	private void compute(ActionEvent evt) {
 		
 		if (txtStudentIme.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije uneseno ime studenta.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije uneseno ime studenta!").showAndWait();
 			return;
 		}
 		
 		if (txtStudentPrezime.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije uneseno prezime studenta.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije uneseno prezime studenta!").showAndWait();
 			return;
 		}
-
+		
 		if (txtStudentBrInd.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije unesen broj indeksa studenta.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije unesen broj indeksa studenta!").showAndWait();
 			return;
 		}
 
 		if (txtStudentProsek.getText().length() == 0) {
-			new Alert(Alert.AlertType.ERROR, "Nije unesena prosecna ocena studenta.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Nije unesena prosecna ocena studenta!").showAndWait();
 			return;
 		}
 		
@@ -264,7 +261,7 @@ public class Main extends Application {
 		try {
 			d = Double.parseDouble(txtStudentProsek.getText().trim());
 		} catch (NumberFormatException nfe) {
-			new Alert(Alert.AlertType.ERROR, "Prosecna ocena nije broj.").showAndWait();
+			new Alert(Alert.AlertType.ERROR, "Prosecna ocena nije broj!").showAndWait();
 			return;
 		}
 		
@@ -272,7 +269,7 @@ public class Main extends Application {
 		
 		resetReferentFields();
 	}
-
+	
 
 	private void saveInFile() {
 		
@@ -295,14 +292,14 @@ public class Main extends Application {
 		String prz = txtStudentPrezime.getText();
 		String idx = txtStudentBrInd.getText();
 		String prg = comboStudijskiProgram.getValue();
-		int	   god = comboGodina.getValue();
+		int    god = comboGodina.getValue();
 		String avg = txtStudentProsek.getText();
 		
 		String msc = "";
 		
 		if (god == 4) {
 			
-			Alert a0 = new Alert(Alert.AlertType.CONFIRMATION, "Studenti cetvrte godine mogu biti upisani na master. Nastaviti?");
+			Alert a0 = new Alert(Alert.AlertType.ERROR, "Studenti cetvrte godine mogu biti upisani na master. Nastaviti?");
 			Optional<ButtonType> btn0 = a0.showAndWait();
 			
 			if (btn0.isPresent() && btn0.get() == ButtonType.OK) {
@@ -317,20 +314,19 @@ public class Main extends Application {
 				}
 			}
 			
-			String line = ime + " | " + prz + " | " + idx + " | " + prg + " | " + msc + " | " + avg + "\n";
+			String line = idx + "|" + ime + " | " + prz + " | " + prz+ " | " + prg + " | " + msc + " | " + avg + "\n";
 			listaZaIspis.add(line);
 		} else {
 			
 			god++;
-			String line = ime + " | " + prz + " | " + idx + " | " + prg + " | " + god + " | " + avg + "\n";
+			String line = idx + "|" + ime + " | " + prz + " | " + prz+ " | " + prg + " | " + god + " | " + avg + "\n";
 			listaZaIspis.add(line);
 		}
 		
-		try (PrintWriter pw = new PrintWriter(new FileWriter(FAJL_STUDENTI))) {
+		try (PrintWriter pw = new PrintWriter(new FileWriter(F_STUDENTI))) {
 			
 			for (String s : listaZaIspis)
 				pw.write(s);
-			
 		} catch (IOException e) {
 			new Alert(Alert.AlertType.ERROR, "Greska prilikom snimanja fajla! -> " + e.getMessage());
 			return;
@@ -341,10 +337,9 @@ public class Main extends Application {
 	private String studentInfo() {
 		return txtStudentIme.getText() + " " + txtStudentPrezime.getText() + " " + txtStudentBrInd.getText();
 	}
-
+	
 
 	private void resetReferentFields() {
-		
 		txtStudentIme.setText("");
 		txtStudentPrezime.setText("");
 		comboStudijskiProgram.getSelectionModel().select(0);

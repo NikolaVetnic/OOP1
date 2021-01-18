@@ -92,7 +92,7 @@ public class Main extends Application {
 			prevNum(e); 
 		});
 		
-		// "Previous" button
+		// "Next" button
 		Button btnNext = new Button("Next");
 		btnNext.setPrefWidth(BTN_WIDTH);
 		btnNext.setOnAction(e -> { 

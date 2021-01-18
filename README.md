@@ -2,6 +2,7 @@
 Reseni zadaci sa vezbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi Sad.
 
 ## Predavanja
+- p07_izuzeci
 
 ## Teorijske vezbe
 - tv01_z01 - tacka i trougao
@@ -27,6 +28,11 @@ Reseni zadaci sa vezbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi S
 - pv07_z01 - demonstracioni zadatak: uciteljica
 - pv07_z02 - domaci zadatak: juice bar
 - pv08_z02 - domaci zadatak: JavaFX spisak
+- pv08_z03 - zadatak za vezbu: Fibonaccijev niz, JavaFX
+- pv08_z04 - zadatak za vezbu: studentska sluzba, JavaFX
+- pv08_z05 - zadatak za vezbu: tajanstvena rec, JavaFX
+- pv08_z06 - zadatak za vezbu: pineapple puzzle, JavaFX
+- pv07_z07 - zadatak za vezbu: tajanstvena rec "GUI", JavaFX
 
 ## Kolokvijumi
 - kol1_2020_06 - prodavnica patika
