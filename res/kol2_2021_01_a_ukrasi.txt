@@ -1,0 +1,7 @@
+crvena, 100, 50
+plava, 88, 30
+zuta, 80, 45, 14
+zlatna, 120, 80
+srebrna, 55, 200, 25
+zelena, 70, 100
+roze, 62, 35
