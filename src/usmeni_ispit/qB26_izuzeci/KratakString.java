@@ -1,4 +1,4 @@
-package p07_izuzeci;
+package usmeni_ispit.qB26_izuzeci;
 
 public class KratakString extends Exception {
 	
