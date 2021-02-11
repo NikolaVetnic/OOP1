@@ -1,6 +1,13 @@
 package usmeni_ispit.sandbox;
 
 public class KlasaA {
+	
+	private class KlasaC extends KlasaA {
+
+		public KlasaC(int a) {
+			super(a);
+		}
+	}
 
 	private int a;
 	

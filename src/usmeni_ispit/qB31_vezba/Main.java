@@ -1,4 +1,4 @@
-package usmeni_ispit.qB31_balansirane_zagrade;
+package usmeni_ispit.qB31_vezba;
 
 import java.util.Stack;
 
@@ -6,23 +6,24 @@ public class Main {
 	
 	
 	private static boolean kompatibilna(char z1, char z2) {
-		if 		(z1 == '{') return z2 == '}';
+		if		(z1 == '{') return z2 == '}';
 		else if (z1 == '[') return z2 == ']';
-		else 				return z2 == ')'; 
+		else				return z2 == ')';
 	}
 	
 	
-	public static StringBuilder uvuci(int level) {
+	private static StringBuilder uvuci(int level) {
 		
 		StringBuilder sb = new StringBuilder();
-		sb.append('\n');
+		sb.append("\n");
 		
-		for (int i = 0; i < level; i++) sb.append("  ");
-		
+		for (int i = 0; i < level; i++)
+			sb.append("  ");
+			
 		return sb;
 	}
 	
-	
+
 	public static String format(String ulaz) throws NepravilneZagrade {
 		
 		Stack<Zagrada> stek = new Stack<Zagrada>();
@@ -46,7 +47,7 @@ public class Main {
 				Zagrada poslednjaOtvorena = stek.pop();
 				
 				if (!kompatibilna(poslednjaOtvorena.getZagrada(), c))
-					throw new ZatvorenaPogresna(poslednjaOtvorena, new Zagrada(c, i));
+						throw new ZatvorenaPogresna(poslednjaOtvorena, new Zagrada(c, i));
 				
 				level--;
 			} else {
@@ -60,22 +61,17 @@ public class Main {
 		return sb.toString();
 	}
 	
-
+	
 	public static void main(String[] args) {
 		
-		String[] testSlucajevi = {
-			"if [<= n 1] {1} (* {n}, (factorial (-n 1)))",
-			"Neke ([]{ } zagrade)])))",
-			"Ot ((( nema zatvorene",
-			"Zdravko{Zdr(av)ko[dren]]"
-		};
+		String[] ulaz = { };
 		
-		int brZatvorenaPogresna = 0, brViseca = 0, ok = 0;
+		int brVisecih = 0, brZatvorenaPogresna = 0, ok = 0;
 		
-		for (int i = 0; i < testSlucajevi.length; i++) {
+		for (int i = 0; i < ulaz.length; i++) {
 			
 			try {
-				System.out.println(format(testSlucajevi[i]));
+				System.out.println(format(ulaz[i]));
 				ok++;
 			} catch (NepravilneZagrade e) {
 				System.err.println(e.getMessage());
@@ -83,12 +79,8 @@ public class Main {
 				if (e instanceof ZatvorenaPogresna)
 					brZatvorenaPogresna++;
 				else
-					brViseca++;
+					brVisecih++;
 			}
 		}
-		
-		System.out.println("Proslo test primera: " + ok);
-		System.out.println("Zatvoreno pogresnih: " + brZatvorenaPogresna);
-		System.out.println("Visecih	           : " + brViseca);
 	}
 }

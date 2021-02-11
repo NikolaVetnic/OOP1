@@ -40,7 +40,7 @@ public class AppMainFX extends Application implements EventHandler<ActionEvent> 
 	public static void main(String[] args) {
 		launch(args);
 	}
-	
+
 	public AppMainFX() {
 		this.matrica = new Matrica(DIM, BR_UZASTOPNIH);
 	}
