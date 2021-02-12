@@ -1,8 +1,48 @@
 # OOP1
-Reseni zadaci sa vezbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi Sad.
+Materijal sa predmeta Objektno orijentisano programiranje 1 na PMFu, Novi Sad.
 
-## Predavanja
-- p07_izuzeci
+## Usmeni ispit, kod
+- A05 Konstruktori
+- A06 Singleton pattern
+- A07 Konstruktori i nasledjivanje
+- A09 Nasledjivanje
+- A12 Apstraktne klase
+- A14 Staticki inicijalizatori
+- A15 Nestaticki inicijalizatori
+- A16 Staticke ugnjezdene klase
+- A17 Unutrasnje klase
+- A17 Shadowing polja
+- A18 Lokalna klasa
+- A18 Anonimna klasa
+- A19 Interfejsi
+- A20 Nasledjivanje interfejsa
+- B21 Enum-i
+- B26 Izuzeci
+- B29 Brojac linija
+- B30 Kopiranje TXT fajla
+- B31 Balansirane zagrade
+- B36 Obrada dogadjaja / funkcionalni interfejsi / anonimne metode
+
+## Usmeni ispit, slajdovi
+- P01 Uvod
+- P02 Klase
+- P03 Nasledjivanje
+- P04 Klase II
+- P05 Interfejsi
+- P06 Stringovi
+- P07 Izuzeci
+- P08 Paketi
+- P09 JavaFX
+- P10 Kolekcije
+- Ispitna pitanja
+- Java API
+- JavaFX, vizuelne komponente
+- JavaFX, dodatno
+- Kolekcije
+
+## Usmeni ispit, skripta
+- OOP1_UsmeniIspit.docx (dark verzija, za citanje na racunaru)
+- OOP1_UsmeniIspit PRINT.pdf
 
 ## Teorijske vezbe
 - tv01_z01 - tacka i trougao
@@ -27,14 +67,16 @@ Reseni zadaci sa vezbi iz Objektno orijentisanog programiranja 1 na PMFu, Novi S
 - pv06_z02 - domaci zadatak: polja i gazdinstva
 - pv07_z01 - demonstracioni zadatak: uciteljica
 - pv07_z02 - domaci zadatak: juice bar
+- pv08_z01 - demonstracioni zadatak: JavaFX matrica dugmica
 - pv08_z02 - domaci zadatak: JavaFX spisak
 - pv08_z03 - zadatak za vezbu: Fibonaccijev niz, JavaFX
 - pv08_z04 - zadatak za vezbu: studentska sluzba, JavaFX
 - pv08_z05 - zadatak za vezbu: tajanstvena rec, JavaFX
 - pv08_z06 - zadatak za vezbu: pineapple puzzle, JavaFX
-- pv07_z07 - zadatak za vezbu: tajanstvena rec "GUI", JavaFX
+- pv08_z07 - zadatak za vezbu: tajanstvena rec "GUI", JavaFX
 
 ## Kolokvijumi
 - kol1_2020_06 - prodavnica patika
 - kol1_2020_11a - kafana
 - kol1_2020_11b - prodavnica elektronike
+- kol2_2021_01a - ukrasi za jelku
